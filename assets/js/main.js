@@ -19,11 +19,20 @@ las666.push(Macarena, Berenisse, Susana, Francisca, Rata, Claudia, Dani, Nicole)
 
 var imprimir = document.getElementById("mi-squad");
 
-
 las666.forEach(function(squadM){
 
-    imprimir.innerHTML += squadM.imagen +'<br><br>' +'<b>Nombre y Apellido:</b> ' + squadM.nombreApellido + '<br><b>Edad:</b> ' + squadM.edad + "  años" + '<br><b>sHobbies: </b>';
-    var listaHobbie =  squadM.hobbies.forEach(function(companera){
-    	return (imprimir.innerHTML += companera + ", ")});
-   imprimir.innerHTML += '<br><br>' ;
+    imprimir.innerHTML += squadM.imagen +'<br><br>' +'<b>Nombre y Apellido:</b> ' + squadM.nombreApellido + '<br><b>Edad:</b> ' + squadM.edad + "  años" + '<br><b>Hobbies: </b>';
+    var Hobbie =  squadM.hobbies.forEach(function(companera){
+    	return (imprimir.innerHTML += "<li>"+ companera + "</li>")});
+   	imprimir.innerHTML += '<br><br>' ;
 })
+
+function getCooments(){
+	var input = document.getElementById("comment-box");
+
+	var contComent = document.getElementsByClassName("printComment");
+
+	contComent[0].innerHTML += input.value +"<br>";
+
+	input.value = "";
+}
